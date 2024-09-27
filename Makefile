@@ -9,7 +9,7 @@ OFILES = $(CFILES:.c=.o)
 Compiler = gcc -g
 Flags = -Wall -Wextra -Werror
 
-MLX_DIR = ./minilibx-mac-osx
+MLX_DIR = ./MLX
 MLX_LIB = $(MLX_DIR)/libmlx.a
 
 MLXFLAGS = -L$(MLX_DIR) -lmlx -framework OpenGL -framework AppKit

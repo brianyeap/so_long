@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: brian <brian@student.42.fr>                +#+  +:+       +#+        */
+/*   By: bryeap <bryeap@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 02:33:05 by brian             #+#    #+#             */
-/*   Updated: 2024/09/26 23:05:58 by brian            ###   ########.fr       */
+/*   Updated: 2024/09/27 20:20:23 by bryeap           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include "./libft/libft.h"
 # include "./libft/get_next_line/get_next_line.h"
-# include "./minilibx-mac-osx/mlx.h"
+# include "./MLX/mlx.h"
 
 # include <unistd.h>
 # include <fcntl.h>
@@ -40,7 +40,7 @@ typedef struct s_player
 	int	y;
 	int	x;
 
-}t_player;
+}	t_player;
 
 typedef struct s_img
 {
@@ -50,7 +50,7 @@ typedef struct s_img
 	void	*exit;
 	void	*player;
 	void	*enemy;
-}t_img;
+}	t_img;
 
 typedef struct s_map
 {
@@ -73,7 +73,7 @@ typedef struct s_map
 	void		*wnd;
 	t_img		img;
 	t_player	player;
-}t_map;
+}	t_map;
 
 // Error
 void	error_filename(void);
@@ -83,33 +83,32 @@ void	error_wall(t_map *map);
 void	error_map_elements(t_map *map);
 
 // Check
-void 	check_map(t_map *map);
-void 	search_player(t_map *map);
+void	check_map(t_map *map);
+void	search_player(t_map *map);
 void	check_path(t_map *map);
 
 // Free
-void ft_freeandexit(t_map *map);
-int ft_free_array(char **array, int i);
+void	ft_freeandexit(t_map *map);
+int		ft_free_array(char **array, int i);
 
-void generate_map_array(t_map *map);
-void file_to_image(t_map *map);
+void	generate_map_array(t_map *map);
+void	file_to_image(t_map *map);
 
 // end screen
 int		ft_close(t_map *map);
-void win_screen(t_map *map);
+void	win_screen(t_map *map);
 
 // print map
-void print_map(t_map *map);
-void print_moves(t_map *map);
+void	print_map(t_map *map);
+void	print_moves(t_map *map);
 
 // hook
-int	key_hook(int keypressed, t_map *map);
+int		key_hook(int keypressed, t_map *map);
 
 //movement
-void move_up(t_map *map);
-void move_down(t_map *t_map);
-void move_left(t_map *map);
-void move_right(t_map *map);
-
+void	move_up(t_map *map);
+void	move_down(t_map *t_map);
+void	move_left(t_map *map);
+void	move_right(t_map *map);
 
 #endif

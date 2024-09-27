@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   print_map.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: brian <brian@student.42.fr>                +#+  +:+       +#+        */
+/*   By: bryeap <bryeap@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/26 02:13:26 by brian             #+#    #+#             */
-/*   Updated: 2024/09/26 19:51:36 by brian            ###   ########.fr       */
+/*   Updated: 2024/09/27 20:26:18 by bryeap           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,28 +14,27 @@
 
 static void	plot_map(t_map *map, int x, int y)
 {
-	int type;
+	int	type;
 
 	type = map->array[y / IMG_PXL][x / IMG_PXL];
 	(void)type;
-	// if (type == 'C' || type == 'P' || type == 'E' || type == '0')
-		// mlx_put_image_to_window(map->mlx, map->wnd, map->img.empty, x, y);
-	// if (type == 'C')
-	// 	mlx_put_image_to_window(map->mlx, map->wnd, map->img.collectible, x, y);
-	// else if (type == 'P')
+	if (type == 'C' || type == 'P' || type == 'E' || type == '0')
+		mlx_put_image_to_window(map->mlx, map->wnd, map->img.empty, x, y);
+	if (type == 'C')
+		mlx_put_image_to_window(map->mlx, map->wnd, map->img.collectible, x, y);
+	else if (type == 'P')
 		mlx_put_image_to_window(map->mlx, map->wnd,
 			map->img.player, 100, 100);
-	// else if (type == 'E')
-	// 	mlx_put_image_to_window(map->mlx, map->wnd, map->img.exit, x, y);
-	// else if (type == '1')
-	// 	mlx_put_image_to_window(map->mlx, map->wnd, map->img.wall, x, y);
-	
+	else if (type == 'E')
+		mlx_put_image_to_window(map->mlx, map->wnd, map->img.exit, x, y);
+	else if (type == '1')
+		mlx_put_image_to_window(map->mlx, map->wnd, map->img.wall, x, y);
 }
 
-void print_map(t_map *map)
+void	print_map(t_map *map)
 {
-    int	x;
-	int y;
+	int	x;
+	int	y;
 
 	x = 0;
 	y = 0;
@@ -51,9 +50,9 @@ void print_map(t_map *map)
 	}
 }
 
-void print_moves(t_map *map)
+void	print_moves(t_map *map)
 {
-	char *moves;
+	char	*moves;
 
 	moves = ft_itoa(map->moves);
 	ft_putstr_fd("\n\x1b[32;01m", 1);
