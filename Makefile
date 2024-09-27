@@ -3,7 +3,7 @@ Library = so_long
 LIBFT_DIR = ./libft
 LIBFT = $(LIBFT_DIR)/libft.a
 
-CFILES = $(wildcard *.c)
+CFILES = $(wildcard main/*.c)
 OFILES = $(CFILES:.c=.o)
 
 Compiler = gcc -g
@@ -18,7 +18,7 @@ MLXFLAGS = -L$(MLX_DIR) -lmlx -framework OpenGL -framework AppKit
 OUTN = $(Library)
 NAME = $(OUTN)
 
-INCLUDES = -I./ -I$(LIBFT_DIR) -I$(MLX_DIR)
+INCLUDES = -I./main -I$(LIBFT_DIR) -I$(MLX_DIR)
 
 all: $(NAME)
 
